@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block title %}入退室管理アプリ{%endblock%}
+
+{% block javascript %}
+<script>
+    var now = new Date();
+    var y = now.getFullYear();
+    var m = now.getMonth() + 1;
+    var d = now.getDate();
+    var w = now.getDay();
+    var wd = ['日', '月', '火', '水', '木', '金', '土'];
+    var h = now.getHours();
+    var mi = now.getMinutes();
+    var s = now.getSeconds();
+    $('#time').text(y + '年' + m + '月' + d + '日' + h + '時' + mi + '分' + s + '秒' + '(' + wd[w] + ')');
+    $(function(){
+    setInterval(function(){
+    var now = new Date();
+    var y = now.getFullYear();
+    var m = now.getMonth() + 1;
+    var d = now.getDate();
+    var w = now.getDay();
+    var wd = ['日', '月', '火', '水', '木', '金', '土'];
+    var h = now.getHours();
+    var mi = now.getMinutes();
+    var s = now.getSeconds();
+    $('#time').text(y + '年' + m + '月' + d + '日' + h + '時' + mi + '分' + s + '秒' + '(' + wd[w] + ')');
+    }, 1000);
+    });
+</script>
+
+
+{% endblock %}
+{% block content %}
+<div class="card" >
+    <p id="time"></p>
+  <div class="card-body">
+
+      <form method="POST" action="/entry">
+              {% csrf_token %}
+              <select name="place">
+
+                {% for place in places %}
+                      <option value="{{place.id}}">
+                      {{ place.name }}
+                      </option>
+
+                {% endfor %}
+              </select>
+          <input type="submit" class="btn btn-primary" value="入室">
+      </form>
+
+      <a href="#" class="btn btn-primary">退室</a>
+  </div>
+</div>
+
+
+{%endblock%}
