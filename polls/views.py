@@ -29,14 +29,7 @@ def index(request,number=1,symbol="+",number2=1):
 @login_required
 def home(request):
 
-    subject = "題名"
-    message = "本文ですこんにちは。メールを送信しました"
-    from_email = settings.DEFAULT_FROM_EMAIL
-    recipient_list = [
-        "ryuji.yasu@gmail.com"
-    ]
 
-    send_mail(subject, message, from_email, recipient_list)
     number=1
     return render(request,"polls/index.html",{
         "message":number,
