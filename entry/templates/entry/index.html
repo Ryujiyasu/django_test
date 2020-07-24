@@ -29,31 +29,24 @@
     }, 1000);
     });
 </script>
-
-
 {% endblock %}
+
 {% block content %}
 <div class="card" >
     <p id="time"></p>
-  <div class="card-body">
-
-      <form method="POST" action="/entry">
-              {% csrf_token %}
-              <select name="place">
-
+    <div class="card-body">
+        <form method="POST" action="/entry">
+            {% csrf_token %}
+            <select name="place">
                 {% for place in places %}
-                      <option value="{{place.id}}">
-                      {{ place.name }}
-                      </option>
-
+                    <option value="{{place.id}}">
+                        {{ place.name }}
+                    </option>
                 {% endfor %}
-              </select>
-          <input type="submit" class="btn btn-primary" value="入室">
-      </form>
-
-      <a href="#" class="btn btn-primary">退室</a>
-  </div>
+            </select>
+            <input type="submit" class="btn btn-primary" value="入室">
+        </form>
+        <a href="#" class="btn btn-primary">退室</a>
+    </div>
 </div>
-
-
-{%endblock%}
+{%　endblock　%}
