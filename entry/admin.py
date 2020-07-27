@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import MstPlace,Entry
+from .models import MstPlace, Entry
 
 
 # Register your models here.

@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}入退室管理アプリ{%endblock%}
+{% block title %} 入退室管理アプリ {%　endblock　%}
 
 {% block javascript %}
 <script>
@@ -29,31 +29,44 @@
     }, 1000);
     });
 </script>
-
-
 {% endblock %}
+
 {% block content %}
 <div class="card" >
     <p id="time"></p>
-  <div class="card-body">
+    <div class="card-body">
 
-      <form method="POST" action="/entry">
-              {% csrf_token %}
-              <select name="place">
-
+            {% if entry_flg %}
+            <p>{{entry.entry_place}}
+            <font  class="btn btn-danger" >入室</font>{{entry.entry_date}}</p>
+            {% else %}
+        <form method="POST" action="/entry">
+            {% csrf_token %}
+            <select name="place">
                 {% for place in places %}
-                      <option value="{{place.id}}">
-                      {{ place.name }}
-                      </option>
-
+                    <option value="{{place.id}}">
+                        {{ place.name }}
+                    </option>
                 {% endfor %}
-              </select>
-          <input type="submit" class="btn btn-primary" value="入室">
-      </form>
+            </select>
+            <input type="submit" class="btn btn-primary" value="入室">
+            </form>
+            {% endif %}
 
-      <a href="#" class="btn btn-primary">退室</a>
-  </div>
+        {% if entry_flg %}
+            <form method="POST" action="/exit">
+                {% csrf_token %}
+                <select name="place">
+                    {% for place in places %}
+                        <option value="{{place.id}}">
+                            {{ place.name }}
+                        </option>
+                    {% endfor %}
+                </select>
+                <input type="hidden" value="{{entry.id}}" name="entry_id">
+                <input type="submit" class="btn btn-primary" value="退室">
+            </form>
+        {% endif %}
+    </div>
 </div>
-
-
-{%endblock%}
+{%　endblock　%}
