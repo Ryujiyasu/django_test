@@ -10,13 +10,13 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d19206e9-69c2-4261-a531-7569b3f5d7e2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="d19206e9-69c2-4261-a531-7569b3f5d7e2" name="Default Changelist" comment="スーパーユーザー追加&#10;フォーマット変更">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entry/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/entry/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/entry/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/entry/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entry/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/entry/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/entry/templates/entry/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/entry/templates/entry/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/entry/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/entry/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/entry/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/entry/views.py" afterDir="false" />
@@ -33,11 +33,6 @@
         <option value="HTML File" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>EMAIL_BACKEND</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -72,7 +67,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Python" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -105,7 +100,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595133851151</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="スーパーユーザー追加&#10;フォーマット変更">
+      <created>1595604194175</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1595604194175</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -151,13 +153,26 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="QuestionのモデルにQuestiontext3を加えました" />
-    <option name="LAST_COMMIT_MESSAGE" value="QuestionのモデルにQuestiontext3を加えました" />
+    <MESSAGE value="スーパーユーザー追加&#10;フォーマット変更" />
+    <option name="LAST_COMMIT_MESSAGE" value="スーパーユーザー追加&#10;フォーマット変更" />
   </component>
   <component name="WindowStateProjectService">
     <state x="694" y="320" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1595596703677">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="694" y="320" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1595596703677" />
+    <state x="723" y="274" key="FileChooserDialogImpl" timestamp="1595748966142">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="723" y="274" key="FileChooserDialogImpl/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1595748966142" />
+    <state x="441" y="163" key="SettingsEditor" timestamp="1595681809653">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="441" y="163" key="SettingsEditor/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1595681809653" />
+    <state x="596" y="231" width="672" height="678" key="search.everywhere.popup" timestamp="1595682239704">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="596" y="231" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1595682239704" />
   </component>
   <component name="masterDetails">
     <states>
