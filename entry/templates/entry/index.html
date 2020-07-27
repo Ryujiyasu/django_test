@@ -35,6 +35,11 @@
 <div class="card" >
     <p id="time"></p>
     <div class="card-body">
+
+            {% if entry_flg %}
+            <p>{{entry.entry_place}}
+            <font  class="btn btn-danger" >入室</font>{{entry.entry_date}}</p>
+            {% else %}
         <form method="POST" action="/entry">
             {% csrf_token %}
             <select name="place">
@@ -45,18 +50,23 @@
                 {% endfor %}
             </select>
             <input type="submit" class="btn btn-primary" value="入室">
-        </form>
-        <form method="POST" action="/exit">
-            {% csrf_token %}
-            <select name="place">
-                {% for place in places %}
-                    <option value="{{place.id}}">
-                        {{ place.name }}
-                    </option>
-                {% endfor %}
-            </select>
-            <input type="submit" class="btn btn-primary" value="退室">
-        </form>
+            </form>
+            {% endif %}
+
+        {% if entry_flg %}
+            <form method="POST" action="/exit">
+                {% csrf_token %}
+                <select name="place">
+                    {% for place in places %}
+                        <option value="{{place.id}}">
+                            {{ place.name }}
+                        </option>
+                    {% endfor %}
+                </select>
+                <input type="hidden" value="{{entry.id}}" name="entry_id">
+                <input type="submit" class="btn btn-primary" value="退室">
+            </form>
+        {% endif %}
     </div>
 </div>
 {%　endblock　%}
