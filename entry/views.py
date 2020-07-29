@@ -7,6 +7,7 @@ from django.http import HttpResponse
 
 from django.views.decorators.csrf import csrf_exempt
 
+
 # Create your views here.
 # 20200725 -- start --
 # from django.contrib.auth.models import User
@@ -66,13 +67,14 @@ def exit(request):
 
     return redirect("/")
 
+
 #
-#import requests
-#data={
+# import requests
+# data={
 #   "id":1,
 #   "place_id":2
 #   }
-#requests.post("http://127.0.0.1:8000/api",data)
+# requests.post("http://127.0.0.1:8000/api",data)
 #
 #
 
@@ -80,9 +82,8 @@ def exit(request):
 @csrf_exempt
 def api(request):
     if request.method == "POST":
-        id = request.POST["id"]
+        user = User.objects.get(username=request.POST["user_name"])
         place_id = request.POST["place_id"]
-        user = User.objects.get(id=id)
         place = MstPlace.objects.get(id=place_id)
         Entry.objects.create(
             user=user,

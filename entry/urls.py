@@ -5,5 +5,5 @@ urlpatterns = [
     path("", views.index),
     path("entry", views.entry),
     path("exit", views.exit),
-    path("api",views.api)
+    path("api", views.api)
 ]
