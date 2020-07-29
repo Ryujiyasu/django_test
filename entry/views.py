@@ -66,6 +66,16 @@ def exit(request):
 
     return redirect("/")
 
+#
+#import requests
+#data={
+#   "id":1,
+#   "place_id":2
+#   }
+#requests.post("http://127.0.0.1:8000/api",data)
+#
+#
+
 
 @csrf_exempt
 def api(request):
