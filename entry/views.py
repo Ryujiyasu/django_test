@@ -4,13 +4,9 @@ from django.utils import timezone
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.http import HttpResponse
-
 from django.views.decorators.csrf import csrf_exempt
+import sqlite3
 
-# Create your views here.
-# 20200725 -- start --
-# from django.contrib.auth.models import User
-# 20200725 -- end --
 
 @login_required
 def index(request):
@@ -66,13 +62,14 @@ def exit(request):
 
     return redirect("/")
 
+
 #
-#import requests
-#data={
+# import requests
+# data={
 #   "id":1,
 #   "place_id":2
 #   }
-#requests.post("http://127.0.0.1:8000/api",data)
+# requests.post("http://127.0.0.1:8000/api",data)
 #
 #
 
@@ -80,12 +77,38 @@ def exit(request):
 @csrf_exempt
 def api(request):
     if request.method == "POST":
-        id = request.POST["id"]
-        place_id = request.POST["place_id"]
-        user = User.objects.get(id=id)
-        place = MstPlace.objects.get(id=place_id)
-        Entry.objects.create(
-            user=user,
-            entry_place=place,
-        )
-        return HttpResponse("登録完了")
+        cnt = 0
+        auth_flg = 0
+        # データベース接続
+        conn = sqlite3.connect("db.sqlite3")
+        c = conn.cursor()
+        try:
+            # ユーザー名称取得
+            for user_list in c.execute("SELECT username FROM auth_user"):
+                if user_list[cnt] == request.POST["user_name"]:
+                    auth_flg = 1
+                    break
+                else:
+                    cnt += 1
+        finally:
+            # データベース切断
+            conn.close()
+            print("auth_flg : " + str(auth_flg))
+        if auth_flg == 1:
+            user = User.objects.get(username=request.POST["user_name"])
+            place_id = request.POST["place_id"]
+            place = MstPlace.objects.get(id=place_id)
+            try:
+                entry = Entry.objects.get(user=user, exit_date__isnull=True)
+                entry.exit_place = place
+                entry.exit_date = timezone.now()
+                entry.save()
+                return HttpResponse("退室完了")
+            except:
+                Entry.objects.create(
+                    user=user,
+                    entry_place=place,
+                )
+            return HttpResponse("入室完了")
+        else:
+            return HttpResponse("登録未完了")
