@@ -1,7 +1,7 @@
-import nfc,binascii,requests,random
-# import binascii
-# import requests
-# import random
+import nfc
+import binascii
+import requests
+import random
 
 
 clf = nfc.ContactlessFrontend('usb')
@@ -11,27 +11,24 @@ try:
 finally:
     clf.close()
 
+# b'01010310f309530e'
 idm = binascii.hexlify(tag.idm)
 
-#場所を「1～3」の中から適当に選択
-place_id = random.randint(1,3)
+# 場所を「1～3」の中からランダムに選択
+place_id = random.randint(1, 3)
 
-# data = {
-#     "id":idm,
-#     "place_id":place_id
-# }
-
+# バイナリ型を文字列型へ変換
 idm = idm.decode()
 
-print(type(idm))
-print(place_id)
-
+# カードから読み取った情報を送信用の辞書型へ格納
 data = {
-    "user_name":idm,
-    "place_id":place_id
+    "user_name": idm,
+    "place_id": place_id
 }
 
-requests.post("http://127.0.0.1:8000/api",data)
+# カードから読み取った情報を送信
+result = ""
+result = requests.post("http://127.0.0.1:8000/api", data)
 
-# b'01010310f309530e'
-print('please released card')
+print(result)
+print("カードを離してください")
