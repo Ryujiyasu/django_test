@@ -98,10 +98,17 @@ def api(request):
             user = User.objects.get(username=request.POST["user_name"])
             place_id = request.POST["place_id"]
             place = MstPlace.objects.get(id=place_id)
-            Entry.objects.create(
-                user=user,
-                entry_place=place,
-            )
-            return HttpResponse("ユーザ認証＆登録完了")
+            try:
+                entry = Entry.objects.get(user=user, exit_date__isnull=True)
+                entry.exit_place = place
+                entry.exit_date = timezone.now()
+                entry.save()
+                return HttpResponse("退室完了")
+            except:
+                Entry.objects.create(
+                    user=user,
+                    entry_place=place,
+                )
+            return HttpResponse("入室完了")
         else:
             return HttpResponse("登録未完了")

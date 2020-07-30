@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d19206e9-69c2-4261-a531-7569b3f5d7e2" name="Default Changelist" comment="">
+    <list default="true" id="d19206e9-69c2-4261-a531-7569b3f5d7e2" name="Default Changelist" comment="ユーザの登録有無の確認処理追加">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/entry/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/entry/views.py" afterDir="false" />
@@ -109,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595133851151</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="ユーザの登録有無の確認処理追加">
+      <created>1596079687072</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1596079687072</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -155,7 +162,14 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="QuestionのモデルにQuestiontext3を加えました" />
-    <option name="LAST_COMMIT_MESSAGE" value="QuestionのモデルにQuestiontext3を加えました" />
+    <MESSAGE value="ユーザの登録有無の確認処理追加" />
+    <option name="LAST_COMMIT_MESSAGE" value="ユーザの登録有無の確認処理追加" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="598" y="255" key="Vcs.Push.Dialog.v2" timestamp="1596079724171">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="598" y="255" key="Vcs.Push.Dialog.v2/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1596079724171" />
   </component>
   <component name="masterDetails">
     <states>
